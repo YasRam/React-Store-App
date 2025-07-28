@@ -1,14 +1,25 @@
+import { Route, Routes } from "react-router-dom"
+import { Navbar } from "./components/Navbar"
+import { useEffect } from "react"
+import Favorites from "./components/Favorites"
+import Home from "./components/Home"
+// import { Home } from "lucide-react"
+
 function App() {
-  return (<>
-   <h1 className="bg-blue-500 text-white p-5 text-center">
-      Tailwind اشتغل أخيرًا 🔥
-    </h1>
-    
-      <h1 className="bg-red-500 text-white p-5 text-center">
-      Tailwind شغال ولا لأ؟ 🔥
-    </h1>
-  </>
-   
+  let dir = "rtl"
+  useEffect(() => {
+    document.documentElement.setAttribute("dir", dir)
+  }, [])
+
+  return (
+  <div className="min-h-screen bg-gray-100 ">
+    <Navbar/>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="favorites" element={<Favorites/>}/>
+      <Route path="/" element={<Favorites/>}/>
+    </Routes>
+  </div>
   )
 }
 
