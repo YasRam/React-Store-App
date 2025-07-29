@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar"
 import { useEffect } from "react"
 import Favorites from "./components/Favorites"
 import Home from "./components/Home"
+import Footer from "./components/Footer"
 // import { Home } from "lucide-react"
 
 function App() {
@@ -12,13 +13,13 @@ function App() {
   }, [])
 
   return (
-  <div className="min-h-screen bg-gray-100 ">
+  <div className="min-h-screen bg-white ">
     <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="favorites" element={<Favorites/>}/>
-      <Route path="/" element={<Favorites/>}/>
     </Routes>
+    <Footer/>
   </div>
   )
 }
